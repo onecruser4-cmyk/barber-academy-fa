@@ -1,0 +1,19 @@
+{
+  "name": "آکادمی آرایشگری مردانه",
+  "short_name": "آرایشگری مردانه",
+  "description": "آموزش صفر تا صد آرایشگری مردانه به زبان فارسی؛ فید، کوتاهی‌های کلاسیک و مدرن و سنتی",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0a09",
+  "theme_color": "#0c0a09",
+  "dir": "rtl",
+  "lang": "fa",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

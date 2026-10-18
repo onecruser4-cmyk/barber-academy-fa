@@ -1,0 +1,220 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------- Vazirmatn (Persian) local font ---------- */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* gold palette */
+  --color-gold-200: #f6e7c1;
+  --color-gold-300: #eed9a4;
+  --color-gold-400: #e3c27a;
+  --color-gold-500: #d4a24e;
+  --color-gold-600: #b9863a;
+  --color-gold-700: #96682c;
+  --color-ink: #0c0a09;
+  --color-panel: #171310;
+}
+
+:root {
+  --radius: 0.75rem;
+  /* forced dark barbershop theme */
+  --background: #0c0a09;
+  --foreground: #f2ede6;
+  --card: #171310;
+  --card-foreground: #f2ede6;
+  --popover: #1c1713;
+  --popover-foreground: #f2ede6;
+  --primary: #d4a24e;
+  --primary-foreground: #14100d;
+  --secondary: #241d16;
+  --secondary-foreground: #f2ede6;
+  --muted: #221b15;
+  --muted-foreground: #a89c8c;
+  --accent: #2a2118;
+  --accent-foreground: #eed9a4;
+  --destructive: #dc4b3e;
+  --border: rgba(212, 162, 78, 0.14);
+  --input: rgba(212, 162, 78, 0.2);
+  --ring: #d4a24e;
+  --chart-1: #d4a24e;
+  --chart-2: #b9863a;
+  --chart-3: #dc4b3e;
+  --chart-4: #f2ede6;
+  --chart-5: #a89c8c;
+  --sidebar: #171310;
+  --sidebar-foreground: #f2ede6;
+  --sidebar-primary: #d4a24e;
+  --sidebar-primary-foreground: #14100d;
+  --sidebar-accent: #2a2118;
+  --sidebar-accent-foreground: #eed9a4;
+  --sidebar-border: rgba(212, 162, 78, 0.14);
+  --sidebar-ring: #d4a24e;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  }
+}
+
+/* ---------- decorative barber-pole stripes ---------- */
+.barber-pole {
+  background: repeating-linear-gradient(
+    -55deg,
+    #dc4b3e 0px,
+    #dc4b3e 12px,
+    #f2ede6 12px,
+    #f2ede6 24px,
+    #2f5d8a 24px,
+    #2f5d8a 36px,
+    #f2ede6 36px,
+    #f2ede6 48px
+  );
+  animation: pole-slide 1.6s linear infinite;
+}
+@keyframes pole-slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 48px;
+  }
+}
+
+/* gold gradient headline text */
+.gold-text {
+  background: linear-gradient(120deg, #f6e7c1 0%, #d4a24e 45%, #96682c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* subtle noise-free radial glow for hero */
+.hero-glow {
+  background:
+    radial-gradient(60% 50% at 70% 10%, rgba(212, 162, 78, 0.14) 0%, transparent 60%),
+    radial-gradient(50% 40% at 15% 30%, rgba(220, 75, 62, 0.07) 0%, transparent 60%);
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0a09;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a2f23;
+  border-radius: 8px;
+  border: 2px solid #0c0a09;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a24e;
+}
+
+/* thin scrollbar inside scroll areas */
+.thin-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* timeline connector line for lesson steps */
+.step-line::before {
+  content: "";
+  position: absolute;
+  top: 3.25rem;
+  bottom: -1.5rem;
+  right: 1.375rem;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(212, 162, 78, 0.5), rgba(212, 162, 78, 0.08));
+}
+.step-item:last-child .step-line::before {
+  display: none;
+}
+
+/* dashed divider */
+.hr-dashed {
+  background-image: linear-gradient(to left, rgba(212, 162, 78, 0.35) 55%, transparent 45%);
+  background-size: 12px 1px;
+  background-repeat: repeat-x;
+  height: 1px;
+}
